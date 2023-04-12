@@ -1,0 +1,89 @@
+﻿@page
+@model LibraryManagementSystem.Pages.LMS.CreateBookModel
+@{
+}
+@if (Model.errorMessage.Length > 0)
+{
+    <div id="error-div">
+        <br><div class="alert-warning"> @Model.errorMessage </div>  <br />
+        <button type="button" class="btn-close" data-dismiss="alert"
+                onclick="
+    const element = document.getElementById('error-div');
+                element.remove();
+"></button>
+    </div>
+}
+
+@if (Model.successMessage.Length > 0)
+{
+    <div id="success-div">
+        <br><div class="alert-success"> @Model.successMessage </div>  <br />
+        <button type="button" class="btn-close"
+                onclick="
+    const element = document.getElementById('success-div');
+                element.remove();
+"></button>
+    </div>
+}
+<h2>Create book</h2>
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Code</label>
+        <div class="cols-sm-4">
+            <input type="text" class= "form-control" name="code" value="" required/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Book Title</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="title" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Category</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="category" value="" required/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Author</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="author" value="" required/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Pulication</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="publication" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Publish Date</label>
+        <div class="cols-sm-4">
+            <input type="date" class="form-control" name="publish_date" value="" required/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Price</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="price" value="" required/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-1 col-form-label">Rack Number</label>
+        <div class="cols-sm-4">
+            <input type="text" class="form-control" name="rack_number" value="" required/>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" class="btn-primary">Submit</button>
+    </div>
+</form>

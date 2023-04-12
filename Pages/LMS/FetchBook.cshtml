@@ -1,0 +1,37 @@
+﻿@page
+@model NETCore.Pages.LMS.FetchBookModel
+@{
+}
+<br />
+<a class="btn-primary btn-sm" asp-page="/LMS/CreateBook">Insert Book</a>
+<h2>BOOK LIST</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book Code</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Publication</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model.bookList){
+           // when we use @{ } it allow us to write c# code within it
+           <tr>
+               <td> @book.book_code</td>
+               <td>@book.bookTitle</td>
+               <td>@book.author</td>
+               <td>@book.category</td>
+               <td>@book.publication</td>
+               <td>
+                   <a class="btn-primary btn-sm" href="/LMS/UpdateBook?BookCode=@book.book_code">Update Book</a>
+               </td>
+               <td>
+                    <a class="alert-danger" href="/LMS/ConfirmAndDelete?BookCode=@book.book_code">Delete Book</a>
+                </td>
+           </tr>
+        }
+    </tbody>
+</table>
